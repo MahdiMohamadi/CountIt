@@ -33,12 +33,15 @@ cig.Game = (function() {
 	// constructor
 	function CountItGame() {
 		console.log("Game starts.");
-
 		this.canvas = document.getElementById("game-canvas");
 
 		//EaselJS Stage
 		this.stage = new createjs.Stage(this.canvas);
 
+		this.initGame();
+	}
+
+	CountItGame.prototype.initGame = function(){
 		this.totalTiles = 3;
 		this.nextCount = 1;
 		this.nextCountLabel = document.getElementById("next-count");
@@ -69,7 +72,7 @@ cig.Game = (function() {
 
 
 		this.stage.update();
-	}
+	};
 
 	CountItGame.prototype.gameOver = function(){
 		this.nextCount = 1;
