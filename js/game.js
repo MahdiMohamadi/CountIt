@@ -41,12 +41,15 @@ cig.Game = (function() {
 
 		var totalTiles = 10;
 		this.nextCount = 1;
+		this.nextCountLabel = document.getElementById("next-count");
 
 		var tileOnPress = function(event) {
 			if (event.target.number === this.nextCount) {
 				this.stage.removeChild(event.target);
 				this.stage.update();
+
 				this.nextCount++;
+				this.nextCountLabel.innerText = this.nextCount;
 			}
 		};
 
