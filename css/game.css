@@ -19,3 +19,22 @@
   background: #efefef;
   padding: 10px;
 }
+
+#gameover{
+  position: absolute;
+  top: -320px;
+  left: 0;
+  width: 480px;
+  height: 240px;
+  background: white;
+  text-align: center;	
+  padding-top: 80px;
+  font-size: 2em;
+}
+
+#gameover.gameover-show{
+	top: 0;
+	-webkit-transition: top .3s ease-out;
+	-moz-transition: top .3s ease-out;
+	transition: top .3s ease-out;
+}

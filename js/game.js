@@ -39,7 +39,7 @@ cig.Game = (function() {
 		//EaselJS Stage
 		this.stage = new createjs.Stage(this.canvas);
 
-		this.totalTiles = 10;
+		this.totalTiles = 3;
 		this.nextCount = 1;
 		this.nextCountLabel = document.getElementById("next-count");
 
@@ -74,6 +74,8 @@ cig.Game = (function() {
 	CountItGame.prototype.gameOver = function(){
 		this.nextCount = 1;
 		this.nextCountLabel.innerText = this.nextCount;
+		var gameOverScene = document.getElementById("gameover");
+		gameOverScene.classList.add("gameover-show");
 	};
 
 	return CountItGame;
