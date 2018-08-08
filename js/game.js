@@ -15,7 +15,14 @@ cig.Tile = (function() {
 
 		this.addChild(shape);
 
-		
+		var numberText = new createjs.Text(number, "24px Helvatica", "red");
+		numberText.x = this.width/2;
+		numberText.y = this.height/2;
+
+		numberText.textAlign = "center";
+		numberText.textBaseline = "middle";
+
+		this.addChild(numberText);
 	}
 
 	var p = Tile.prototype = new createjs.Container();
