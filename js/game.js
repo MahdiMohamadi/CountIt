@@ -41,12 +41,19 @@ cig.Game = (function() {
 
 		var totalTiles = 10;
 
+		var tileOnPress = function(event) {
+			this.stage.removeChild(event.target);
+			this.stage.update();
+		};
+
 		for(var i =totalTiles; i>0; i--){
 			var tile = new cig.Tile(i);
 			this.stage.addChild(tile);
 
 			tile.x = Math.random()*(this.canvas.width-tile.width);
 			tile.y = Math.random()*(this.canvas.height-tile.height);
+
+			tile.onPress = (tileOnPress).bind(this);
 		}
 
 
