@@ -42,6 +42,9 @@ cig.Game = (function() {
 		var tile = new cig.Tile(10);
 		this.stage.addChild(tile);
 
+		tile.x = Math.random()*(this.canvas.width-tile.width);
+		tile.y = Math.random()*(this.canvas.height-tile.height);
+
 		this.stage.update();
 	}
 	return CountItGame;
