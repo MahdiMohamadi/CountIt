@@ -39,11 +39,16 @@ cig.Game = (function() {
 		//EaselJS Stage
 		this.stage = new createjs.Stage(this.canvas);
 
-		var tile = new cig.Tile(10);
-		this.stage.addChild(tile);
+		var totalTiles = 10;
 
-		tile.x = Math.random()*(this.canvas.width-tile.width);
-		tile.y = Math.random()*(this.canvas.height-tile.height);
+		for(var i =totalTiles; i>0; i--){
+			var tile = new cig.Tile(i);
+			this.stage.addChild(tile);
+
+			tile.x = Math.random()*(this.canvas.width-tile.width);
+			tile.y = Math.random()*(this.canvas.height-tile.height);
+		}
+
 
 		this.stage.update();
 	}
