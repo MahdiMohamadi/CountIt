@@ -40,10 +40,14 @@ cig.Game = (function() {
 		this.stage = new createjs.Stage(this.canvas);
 
 		var totalTiles = 10;
+		this.nextCount = 1;
 
 		var tileOnPress = function(event) {
-			this.stage.removeChild(event.target);
-			this.stage.update();
+			if (event.target.number === this.nextCount) {
+				this.stage.removeChild(event.target);
+				this.stage.update();
+				this.nextCount++;
+			}
 		};
 
 		for(var i =totalTiles; i>0; i--){
