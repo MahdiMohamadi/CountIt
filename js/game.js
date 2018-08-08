@@ -39,6 +39,13 @@ cig.Game = (function() {
 		this.stage = new createjs.Stage(this.canvas);
 
 		this.initGame();
+
+		var restartButton = document.getElementById("restart-button");
+		restartButton.onclick = (function(event){
+			var gameOverScene = document.getElementById("gameover");
+			gameOverScene.classList.remove("gameover-show");
+			this.initGame();
+		}).bind(this);
 	}
 
 	CountItGame.prototype.initGame = function(){
