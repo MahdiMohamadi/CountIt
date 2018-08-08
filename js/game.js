@@ -39,7 +39,7 @@ cig.Game = (function() {
 		//EaselJS Stage
 		this.stage = new createjs.Stage(this.canvas);
 
-		var totalTiles = 10;
+		this.totalTiles = 10;
 		this.nextCount = 1;
 		this.nextCountLabel = document.getElementById("next-count");
 
@@ -50,10 +50,14 @@ cig.Game = (function() {
 
 				this.nextCount++;
 				this.nextCountLabel.innerText = this.nextCount;
+
+				if (this.nextCount > this.totalTiles){
+					this.gameOver();
+				}
 			}
 		};
 
-		for(var i =totalTiles; i>0; i--){
+		for(var i =this.totalTiles; i>0; i--){
 			var tile = new cig.Tile(i);
 			this.stage.addChild(tile);
 
@@ -66,6 +70,12 @@ cig.Game = (function() {
 
 		this.stage.update();
 	}
+
+	CountItGame.prototype.gameOver = function(){
+		this.nextCount = 1;
+		this.nextCountLabel.innerText = this.nextCount;
+	};
+
 	return CountItGame;
 })();
 
